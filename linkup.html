@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Roboto&family=Titillium+Web&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="script.js">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+  <style>
+    /* Style for section two */
+    #two {
+      position: relative;
+      width: 100%;
+      height: 70vh; 
+      background: url('pic/Blue\ and\ Black\ Modern\ Sport\ Tournament\ Bracket\ Poster\ \(1\).png') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Optional: dark overlay over background image */
+    #two::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+      z-index: 1;
+    }
+
+    #two h2 {
+      position: relative;
+      z-index: 2;
+      color: white;
+      font-size: 2.5rem;
+      background: rgba(0, 0, 0, 0.5); 
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      #two {
+        height: 40vh; /* Slightly bigger on small screens */
+      }
+      #two h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+  /* Section Three */
+.three {
+    padding: 40px 20px;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Flex container for the two sections inside 'three' */
+.three-content {
+    display: flex;
+    flex-direction: row; /* Display sections side by side */
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.three h1 {
+    font-size: 3.5rem;
+    color: #222;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.three h3 {
+    font-size: 2rem;
+    padding-left: 8%;
+    color: #444;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.three p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Text alignment within the two sections */
+.gaming-text, .gaming-education {
+    flex: 1; /* Allow both divs to take equal space */
+    padding: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* Stack sections in column format for smaller screens */
+    .three-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .three h1 {
+        font-size: 2.5rem;
+    }
+    
+    .three h3 {
+        font-size: 1.5rem;
+    }
+
+    .three p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+}
+
+
+
+
+    /* FC25 Section */
+/* FC25 Section */
+.fc25 {
+    position: relative;
+    display: flex;
+    flex-direction: row; /* Stack image, heading, and text vertically */
+    align-items: left;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.fc25 img {
+    width: 800px;
+    height: 500px ;
+    object-fit: cover;
+    margin-bottom: 40px;
+    align-self: center;
+    padding: 10px;
+}
+
+.fc25-text {
+    text-align: left;
+}
+
+.fc25 h2 {
+    color: hotpink;
+    font-size: 6rem;
+    margin: 10px;
+    margin-bottom: 10px;
+}
+
+.fc25 p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 600px;
+    margin: 10px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .fc25 img {
+        width: 100%;
+    }
+    .fc25 h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* fc25 register  */
+.register {
+    margin-top: 20px;
+}
+
+.register div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.register input[type="email"] {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.register input[type="email"]:focus {
+    border-color: hotpink;
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+}
+
+.register button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: hotpink;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.register button:hover {
+    background-color: deeppink;
+    transform: scale(1.05);
+}
+
+/* Make it responsive on smaller screens */
+@media (max-width: 768px) {
+    .register div {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .register input[type="email"] {
+        width: 100%;
+    }
+
+    .register button {
+        width: 100%;
+    }
+}
+
+/* COD-Mobile Section */
+.cod-mobile {
+    display: flex;
+    flex-direction: row; /* Image on right, text on left */
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    gap: 20px;
+}
+
+.cod-mobile img {
+    width: 800px;
+    height: 500px;
+    object-fit: cover;
+    padding: 10px;
+}
+
+.cod-mobile-text {
+    flex: 1;
+    text-align: left;
+}
+
+.cod-mobile-text h2 {
+    color: deeppink;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.cod-mobile-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 600px;
+    margin: 10px 0;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .cod-mobile {
+        flex-direction: column; /* Stack vertically on mobile */
+    }
+
+    .cod-mobile img {
+        width: 100%;
+        height: auto;
+    }
+
+    .cod-mobile-text h2 {
+        font-size: 2rem;
+    }
+}
+
+   /* handle section */
+   .handle {
+            padding: 40px 20px;
+            background-color: #1e1e2f;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .handle h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: hotpink;
+        }
+
+        .handle table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #2e2e3e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .handle th, .handle td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+
+        .handle th {
+            background-color: #3a3a4d;
+            color: #f0f0f0;
+            font-weight: 600;
+        }
+
+        .handle td input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .handle td input[type="text"]::placeholder {
+            color: #bbb;
+        }
+
+        .remove-btn {
+            color: red;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border: none;
+            background: none;
+        }
+
+        /* Responsive table */
+        @media (max-width: 768px) {
+            .handle table,
+            .handle thead,
+            .handle tbody,
+            .handle th,
+            .handle td,
+            .handle tr {
+                display: block;
+            }
+
+            .handle tr {
+                margin-bottom: 20px;
+                background: #2e2e3e;
+                border-radius: 10px;
+                padding: 10px;
+            }
+
+            .handle td {
+                padding: 10px;
+                text-align: right;
+                position: relative;
+            }
+
+            .handle td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                color: #ccc;
+                font-weight: bold;
+                text-align: left;
+            }
+
+            .handle th {
+                display: none;
+            }
+        }
+
+  </style>
+</head>
+
+<body>
+    <section id="One">
+        <div class="navbar">
+            <ul>
+                <li><a href="read more.html">Admin</a></li> <!-- Updated admin to look like other navbar items -->
+                <li><a href="#">Events</a>
+                    <div class="sub-events">
+                        <ul>
+                            <li><a href="linkup.html">News</a></li>
+                            <li><a href="linkup.html">Events</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">About us</a></li>
+                <li>
+                    <a href="#">Services</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li><a href="#">Computer repairs</a></li>
+                            <li><a href="#">Computer upgrade</a></li>
+                            <li><a href="#">Posters</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">What do we do</a></li>
+            </ul>
+        </div>
+    </section>
+
+  <section id="two">
+    <h2>Cooming soon</h2>
+  </section>
+
+  <section class="three">
+    <h1>Gaming </h1>
+    <div class="three-content">
+      <div class="gaming-text">
+        <h3>Let's talk about gaming</h3>
+        <p>
+            Importance of gaming in our lives. Gaming has become a significant part of modern culture, providing entertainment, social interaction, and even educational opportunities. It fosters creativity, problem-solving skills, and teamwork. Moreover, gaming can serve as a stress reliever and a way to connect with others across the globe. As technology advances, the gaming industry continues to evolve, offering immersive experiences that captivate players of all ages. Whether through console gaming, PC gaming, or mobile apps, the impact of gaming on society is undeniable.
+            <br><br>
+            As we embrace this digital age, understanding the role of gaming in our lives becomes increasingly important.
+        </p>
+      </div>
+  
+      <div class="gaming-education">
+        <h3>Gaming and Education</h3>
+        <p>
+            The intersection of gaming and education has gained significant attention in recent years. Educational games, often referred to as "edutainment," leverage the engaging aspects of gaming to enhance learning experiences. These games can teach various subjects, from mathematics and science to history and language skills, making learning more interactive and enjoyable. By incorporating game mechanics, such as rewards, challenges, and competition, educators can motivate students to actively participate in their learning journey. 
+            <br><br>
+            Furthermore, gaming can foster critical thinking, problem-solving abilities, and collaboration among peers. As technology continues to advance, the potential for using gaming as a powerful educational tool will only grow, shaping the future of learning in innovative ways.
+            <br><br>
+            Our aim is to expose the people of George, even Western Cape, to the world of gaming, and our hope one day is to start our own gaming mini-center and even compete in esports with our own team. We also envision hosting tournaments at our own gaming center.
+        </p>
+      </div>
+    </div>
+ 
+  </section>
+
+  <section class="fc25">
+    <img src="pic/FC25 taateam.png" alt="game 2">
+    <div class="fc25-text">
+      <h2>FC25 TagTeam</h2>
+      <p>FC25 TagTeam is a thrilling gaming experience that combines the excitement of tag team battles with the strategic depth of football. Players can form dynamic duos, executing powerful combos and tactics to outsmart their opponents. With stunning graphics and immersive gameplay, FC25 TagTeam offers an adrenaline-pumping adventure for gamers of all ages. Whether you're teaming up with friends or challenging rivals online, this game promises endless fun and competition in the world of virtual football.
+    <br><br>
+        <strong>Join us in the world of gaming!</strong>
+        register your email to compete in our tournaments and be part of our gaming community. Stay updated with the latest news, events, and exclusive offers. Don't miss out on the action – sign up now and level up your gaming experience with us!
+      </p>
+      <div class="register">
+        <div>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Register</button>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+
+  <section class="cod-mobile">
+    <div class="cod-mobile-text">
+      <h2>COD-Mobile HangOUT</h2>
+      <p>COD-Mobile HangOUT is an exhilarating gaming experience designed to unite players within the Call of Duty Mobile universe. It’s a vibrant platform where gamers connect, strategize, and battle it out in intense multiplayer matches. With a strong focus on teamwork and communication, we foster a community where players of all skill levels can share tips, tactics, and experiences. Whether you're a seasoned veteran or new to the franchise, COD-Mobile HangOUT offers the perfect space for camaraderie, competition, and unforgettable moments.
+        And don’t worry — whether you play with your fingers or a console controller, there’s no judgment here. If you think you’re the best, come and show us what you’ve got!
+        <br><br>
+        <strong>Hang With US</strong>  
+        Register your email to compete in our tournaments and be part of our gaming community. Stay updated with the latest news, events, and exclusive offers. Don't miss out on the action – sign up now and level up your gaming experience with us!
+      </p>
+      <div class="register">
+        <div>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Register</button>
+        </div>
+      </div>
+    </div>
+    <img src="pic/call of duty mobile).jpeg" alt="COD Mobile Game">
+  </section>
+
+     <!-- Gamers Information Section -->
+    <section class="handle">
+      <h2>Gamers Information</h2>
+      <table id="gamersTable">
+          <thead>
+              <tr>
+                  <th>Handle</th>
+                  <th>Game Name</th>
+                  <th>Device</th>
+                  <th>Platform</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+          <tbody id="gamersTableBody">
+              <tr>
+                  <td><input type="text" id="handleInput" placeholder="Enter handle"></td>
+                  <td><input type="text" id="gameInput" placeholder="Enter game name"></td>
+                  <td><input type="text" id="deviceInput" placeholder="Enter device"></td>
+                  <td><input type="text" id="platformInput" placeholder="Enter platform"></td>
+                  <td></td>
+              </tr>
+          </tbody>
+      </table>
+      <div style="margin-top: 15px; text-align: center;">
+          <button onclick="addGamer()" style="padding: 10px 20px; background-color: hotpink; border: none; border-radius: 6px; color: white; cursor: pointer;">Add Gamer</button>
+      </div>
+  </section>
+
+
+  <!-- coment section -->
+
+
+  <section class="comment-section">
+    <h2>Leave a Comment</h2>
+    <form id="commentForm">
+      <textarea id="commentInput" name="comment" placeholder="Your comment..." required></textarea>
+      <button type="button" onclick="postComment()">Posts a comment</button>
+    </form>
+    <div id="postedEmailSection" class="posted-email" style="display: none;">
+      <h3>anonymous</h3>
+      <p id="postedComment"></p>
+    </div>
+  </section>
+
+       
+           <!-- Footer -->
+     <footer style="background-color: #000; color: white; padding: 40px 20px; text-align: center;">
+  
+      <div style="margin-bottom: 10px;">
+        <strong>Gamers Lobby</strong>
+        <span style="color: #fdd835;">gam3rslobby@gmail.com</span>
+      </div>
+      <div style="font-size: 12px; color: #aaa;">
+     
+      </div>
+    </footer>
+  </section>
+
+  <script>
+    const ADMIN_PASSWORD = "admin123"; // Set your admin password here
+
+// Load saved gamers from localStorage when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const savedGamers = JSON.parse(localStorage.getItem('gamers')) || [];
+    const tableBody = document.getElementById('gamersTableBody');
+
+    // Populate the table with saved gamers
+    savedGamers.forEach(gamer => {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${gamer.handle}</td>
+            <td>${gamer.game}</td>
+            <td>${gamer.device}</td>
+            <td>${gamer.platform}</td>
+            <td><button class="remove-btn" onclick="removeGamer(this)">&#10006;</button></td>
+        `;
+        tableBody.appendChild(newRow);
+    });
+});
+
+function addGamer() {
+    // Get input values
+    const handle = document.getElementById('handleInput').value;
+    const game = document.getElementById('gameInput').value;
+    const device = document.getElementById('deviceInput').value;
+    const platform = document.getElementById('platformInput').value;
+
+    // Validate inputs
+    if (!handle || !game || !device || !platform) {
+        alert('Please fill in all fields.');
+        return;
+    }
+
+    // Create a new row
+    const tableBody = document.getElementById('gamersTableBody');
+    const newRow = document.createElement('tr');
+    newRow.innerHTML = `
+        <td>${handle}</td>
+        <td>${game}</td>
+        <td>${device}</td>
+        <td>${platform}</td>
+        <td><button class="remove-btn" onclick="removeGamer(this)">&#10006;</button></td>
+    `;
+    tableBody.appendChild(newRow);
+
+    // Save the gamer to localStorage
+    const savedGamers = JSON.parse(localStorage.getItem('gamers')) || [];
+    savedGamers.push({ handle, game, device, platform });
+    localStorage.setItem('gamers', JSON.stringify(savedGamers));
+
+    // Clear input fields
+    document.getElementById('handleInput').value = '';
+    document.getElementById('gameInput').value = '';
+    document.getElementById('deviceInput').value = '';
+    document.getElementById('platformInput').value = '';
+}
+
+function removeGamer(button) {
+    // Prompt for admin password
+    const password = prompt("Enter admin password to remove this gamer:");
+
+    // Check if the password matches
+    if (password === ADMIN_PASSWORD) {
+        // Remove the row containing the clicked button
+        const row = button.parentElement.parentElement;
+        const handle = row.children[0].textContent;
+
+        // Remove the gamer from localStorage
+        let savedGamers = JSON.parse(localStorage.getItem('gamers')) || [];
+        savedGamers = savedGamers.filter(gamer => gamer.handle !== handle);
+        localStorage.setItem('gamers', JSON.stringify(savedGamers));
+
+        // Remove the row from the table
+        row.remove();
+        alert("Gamer information removed successfully.");
+    } else {
+        alert("Incorrect password. You are not authorized to remove this gamer.");
+    }
+}
+
+</script>
+
+</html>
+

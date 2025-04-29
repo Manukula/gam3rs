@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Comment section styling */
+    .comment-section {
+        padding: 60px 20px;
+        background-color: #2bc9e9;
+        text-align: center;
+    }
+
+    .comment-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .comment-section form {
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+
+    .comment-section textarea {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .comment-section button {
+        margin-top: 10px;
+        padding: 10px 25px;
+        background-color: #001d3d;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .posted-email {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+
+    .posted-email h3 {
+        color: #001d3d;
+        margin-bottom: 10px;
+    }
+
+    .posted-email p {
+        font-size: 1rem;
+        color: #333;
+    }
+</style>
+<body>
+  <section class="comment-section">
+    <h2>Leave a Comment site on construction</h2>
+    <form id="commentForm">
+      <textarea id="commentInput" name="comment" placeholder="Your comment..." required></textarea>
+      <button type="button" onclick="postComment()">Post Comment</button>
+    </form>
+    <div id="postedEmailSection" class="posted-email" style="display: none;">
+      <h3>anonymousl</h3>
+      <p id="postedComment"></p>
+    </div>
+  </section>
+
+  <script>
+    function postComment() {
+        // Get the comment input value
+        const commentInput = document.getElementById('commentInput').value;
+
+        // Check if the input is empty
+        if (!commentInput.trim()) {
+            alert('Please enter a comment before posting.');
+            return;
+        }
+
+        // Display the posted email section
+        const postedEmailSection = document.getElementById('postedEmailSection');
+        const postedComment = document.getElementById('postedComment');
+        postedComment.textContent = commentInput;
+        postedEmailSection.style.display = 'block';
+
+        // Clear the input field
+        document.getElementById('commentInput').value = '';
+    }
+  </script>
+</body>
+</html>

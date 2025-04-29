@@ -1,0 +1,256 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* logo on left, menu on right */
+    align-items: center;
+    background-color: #2c2b2d;
+    padding: 10px 30px;
+    height: 70px; /* better height */
+    box-shadow: 0 2px 5px rgb(255, 255, 255);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar img {
+    width: 120px; /* slightly larger */
+    height: 80px; /* maintain aspect ratio */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+ }
+
+.navbar img:hover {
+    transform: scale(1.05); /* slightly larger on hover */
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+
+
+.navbar ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.navbar ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #efeae9;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+/* Services submenu */
+.sub-menu-1 {
+    display: none;
+    position: absolute;
+    background: #40038a; /* Match navbar */
+    padding: 5px 0;
+    min-width: 150px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 999;
+}
+
+.navbar ul li {
+    position: relative; /* Required for submenu positioning */
+}
+
+.navbar ul li:hover .sub-menu-1 {
+    display: block;
+}
+
+.navbar ul li:hover .sub-menu-1 ul{
+    display: block;
+    margin: 10px;
+
+}
+
+.navbar ul li:hover .sub-menu-1 ul li{
+
+    width: 150px;
+    padding: 10px;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.sub-menu-1 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-menu-1 ul li {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    text-align: left;
+}
+
+.sub-menu-1 ul li a {
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+}
+
+.sub-menu-1 ul li:hover {
+    background-color: #5e28a3; /* Slightly lighter purple on hover */
+}
+
+.sub-menu-1 ul li a {
+         transition: color 0.3s ease; 
+
+         background: 0.3s ease;
+}
+
+.sub-events {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background: #40038a; /* Match navbar background */
+    padding: 5px 0;
+    min-width: 150px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    border-radius: 4px; /* Rounded corners */
+    z-index: 999; /* Ensure it appears above other elements */
+}
+
+.sub-events ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-events ul li {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Add subtle divider */
+    background: transparent;
+    text-align: left;
+    display: block; /* Ensure items stack vertically */
+}
+
+.sub-events ul li a {
+    color: #fff; /* White text */
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease, background 0.3s ease; /* Smooth hover effect */
+}
+
+.sub-events ul li:hover {
+    background-color: #5e28a3; /* Slightly lighter purple on hover */
+}
+
+.sub-events ul li a:hover {
+    color: #e5e5e4; /* Add hover effect for text */
+}
+
+/* Show sub-events on hover */
+.navbar ul li:hover .sub-events {
+    display: block; /* Make dropdown visible */
+}
+
+
+
+
+     /* Comment section styling */
+    .comment-section {
+        padding: 60px 20px;
+        background-color: #2bc9e9;
+        text-align: center;
+    }
+
+    .comment-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .comment-section form {
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+
+    .comment-section textarea {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .comment-section button {
+        margin-top: 10px;
+        padding: 10px 25px;
+        background-color: #001d3d;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .posted-email {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+
+    .posted-email h3 {
+        color: #001d3d;
+        margin-bottom: 10px;
+    }
+
+    .posted-email p {
+        font-size: 1rem;
+        color: #333;
+    }

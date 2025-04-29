@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     /* handle section */
+   .handle {
+            padding: 40px 20px;
+            background-color: #1e1e2f;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .handle h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: hotpink;
+        }
+
+        .handle table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #2e2e3e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .handle th, .handle td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+
+        .handle th {
+            background-color: #3a3a4d;
+            color: #f0f0f0;
+            font-weight: 600;
+        }
+
+        .handle td input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .handle td input[type="text"]::placeholder {
+            color: #bbb;
+        }
+
+        .remove-btn {
+            color: red;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border: none;
+            background: none;
+        }
+
+        /* Responsive table */
+        @media (max-width: 768px) {
+            .handle table,
+            .handle thead,
+            .handle tbody,
+            .handle th,
+            .handle td,
+            .handle tr {
+                display: block;
+            }
+
+            .handle tr {
+                margin-bottom: 20px;
+                background: #2e2e3e;
+                border-radius: 10px;
+                padding: 10px;
+            }
+
+            .handle td {
+                padding: 10px;
+                text-align: right;
+                position: relative;
+            }
+
+            .handle td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                color: #ccc;
+                font-weight: bold;
+                text-align: left;
+            }
+
+            .handle th {
+                display: none;
+            }
+        }
+
+</style>
+<body>
+        <!-- Gamers Information Section -->
+        <section class="handle">
+            <h2>Gamers Information</h2>
+            <table id="gamersTable">
+                <thead>
+                    <tr>
+                        <th>Handle</th>
+                        <th>Game Name</th>
+                        <th>Device</th>
+                        <th>Platform</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="gamersTableBody">
+                    <tr>
+                        <td><input type="text" id="handleInput" placeholder="Enter handle"></td>
+                        <td><input type="text" id="gameInput" placeholder="Enter game name"></td>
+                        <td><input type="text" id="deviceInput" placeholder="Enter device"></td>
+                        <td><input type="text" id="platformInput" placeholder="Enter platform"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 15px; text-align: center;">
+                <button onclick="addGamer()" style="padding: 10px 20px; background-color: hotpink; border: none; border-radius: 6px; color: white; cursor: pointer;">Add Gamer</button>
+            </div>
+        </section>
+      
+        <script>
+            // Load saved gamers from localStorage when the page loads
+            document.addEventListener('DOMContentLoaded', () => {
+                const savedGamers = JSON.parse(localStorage.getItem('gamers')) || [];
+                const tableBody = document.getElementById('gamersTableBody');
+        
+                // Populate the table with saved gamers
+                savedGamers.forEach(gamer => {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${gamer.handle}</td>
+                        <td>${gamer.game}</td>
+                        <td>${gamer.device}</td>
+                        <td>${gamer.platform}</td>
+                        <td><button class="remove-btn" onclick="removeGamer(this)">&#10006;</button></td>
+                    `;
+                    tableBody.appendChild(newRow);
+                });
+            });
+        
+            function addGamer() {
+                // Get input values
+                const handle = document.getElementById('handleInput').value;
+                const game = document.getElementById('gameInput').value;
+                const device = document.getElementById('deviceInput').value;
+                const platform = document.getElementById('platformInput').value;
+        
+                // Validate inputs
+                if (!handle || !game || !device || !platform) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+        
+                // Create a new row
+                const tableBody = document.getElementById('gamersTableBody');
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td>${handle}</td>
+                    <td>${game}</td>
+                    <td>${device}</td>
+                    <td>${platform}</td>
+                    <td><button class="remove-btn" onclick="removeGamer(this)">&#10006;</button></td>
+                `;
+                tableBody.appendChild(newRow);
+        
+                // Save the gamer to localStorage
+                const savedGamers = JSON.parse(localStorage.getItem('gamers')) || [];
+                savedGamers.push({ handle, game, device, platform });
+                localStorage.setItem('gamers', JSON.stringify(savedGamers));
+        
+                // Clear input fields
+                document.getElementById('handleInput').value = '';
+                document.getElementById('gameInput').value = '';
+                document.getElementById('deviceInput').value = '';
+                document.getElementById('platformInput').value = '';
+            }
+        
+            function removeGamer(button) {
+                // Remove the row containing the clicked button
+                const row = button.parentElement.parentElement;
+                const handle = row.children[0].textContent;
+        
+                // Remove the gamer from localStorage
+                let savedGamers = JSON.parse(localStorage.getItem('gamers')) || [];
+                savedGamers = savedGamers.filter(gamer => gamer.handle !== handle);
+                localStorage.setItem('gamers', JSON.stringify(savedGamers));
+        
+                // Remove the row from the table
+                row.remove();
+            }
+        </script>
+</body>
+</html>
