@@ -509,8 +509,8 @@
           </tbody>
       </table>
       <div style="margin-top: 15px; text-align: center;">
-          <button onclick="addGamer()" style="padding: 10px 20px; background-color: hotpink; border: none; border-radius: 6px; color: white; cursor: pointer;">Add Gamer</button>
-      </div>
+        <button onclick="addGamer()" style="padding: 10px 20px; background-color: hotpink; border: none; border-radius: 6px; color: white; cursor: pointer;">Add Gamer</button>
+    </div>
   </section>
 
 
@@ -564,7 +564,6 @@ document.addEventListener('DOMContentLoaded', () => {
         tableBody.appendChild(newRow);
     });
 });
-
 function addGamer() {
     // Get input values
     const handle = document.getElementById('handleInput').value;
@@ -595,37 +594,16 @@ function addGamer() {
     savedGamers.push({ handle, game, device, platform });
     localStorage.setItem('gamers', JSON.stringify(savedGamers));
 
+    // Send details to WhatsApp
+    const whatsappMessage = `New Gamer Added:\nHandle: ${handle}\nGame: ${game}\nDevice: ${device}\nPlatform: ${platform}`;
+    const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappMessage)}&phone=`;
+    window.open(whatsappLink, '_blank');
+
     // Clear input fields
     document.getElementById('handleInput').value = '';
     document.getElementById('gameInput').value = '';
     document.getElementById('deviceInput').value = '';
     document.getElementById('platformInput').value = '';
-}
-
-    // local storage for this page
-    
-
-function removeGamer(button) {
-    // Prompt for admin password
-    const password = prompt("Enter admin password to remove this gamer:");
-
-    // Check if the password matches
-    if (password === ADMIN_PASSWORD) {
-        // Remove the row containing the clicked button
-        const row = button.parentElement.parentElement;
-        const handle = row.children[0].textContent;
-
-        // Remove the gamer from localStorage
-        let savedGamers = JSON.parse(localStorage.getItem('gamers')) || [];
-        savedGamers = savedGamers.filter(gamer => gamer.handle !== handle);
-        localStorage.setItem('gamers', JSON.stringify(savedGamers));
-
-        // Remove the row from the table
-        row.remove();
-        alert("Gamer information removed successfully.");
-    } else {
-        alert("Incorrect password. You are not authorized to remove this gamer.");
-    }
 }
 
 </script>
