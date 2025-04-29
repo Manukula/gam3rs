@@ -521,7 +521,7 @@
     <h2>Leave a Comment</h2>
     <form id="commentForm">
       <textarea id="commentInput" name="comment" placeholder="Your comment..." required></textarea>
-      <button type="button" onclick="postComment()">Post a comment</button>
+      <button type="button" onclick="postComment()">Posts a comment</button>
     </form>
     <div id="postedEmailSection" class="posted-email" style="display: none;">
       <h3>anonymous</h3>
@@ -601,6 +601,9 @@ function addGamer() {
     document.getElementById('deviceInput').value = '';
     document.getElementById('platformInput').value = '';
 }
+
+    // local storage for this page
+    
 
 function removeGamer(button) {
     // Prompt for admin password
