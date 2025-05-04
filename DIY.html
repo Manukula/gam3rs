@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DIY Section</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 10px 20px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: rgb(255, 255, 255);
+        }
+
+        /* Section 2 (DIY Section) */
+        .two {
+            position: relative;
+            width: 100%;
+            height: 70vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(45deg, #3A86FF, #8338EC, #FF006E, #FB5607, #FFBE0B);
+            background-size: 300% 300%;
+            animation: gradientBG 10s ease infinite;
+            color: white;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .two h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .two p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+
+        
+        .three .content {
+            display: flex; /* Use flexbox to align items in a row */
+            flex-direction: row; /* Align items horizontally */
+            justify-content: space-between; /* Add space between text and image content */
+            align-items: flex-start; /* Align items at the top */
+            gap: 20px; /* Add spacing between the text and image content */
+            padding: 40px 20px;
+            color: grey;
+            margin: 0;
+        }
+
+        .content {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .text-content, .image-content {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .text-content h1 {
+      font-size: 2.2rem;
+      color: #107c10;
+      margin-bottom: 0;
+    }
+
+    .text-content h2 {
+      font-size: 1.5rem;
+      color: #f513b5;
+      margin-top: 0;
+    }
+
+    .text-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    ul {
+      margin: 10px 0 20px 20px;
+      padding: 0;
+    }
+
+    .image-content h2 {
+      font-size: 1.4rem;
+      color: #f513b5;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      max-width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .carousel img {
+      height: 350px;
+      width: auto;
+      max-width: 100%;
+      border-radius: 10px;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .controls i {
+      pointer-events: auto;
+      background: white;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .controls i:hover {
+      background: #eee;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+
+      .carousel img {
+        height: 140px;
+      }
+
+      .text-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .text-content h2, .image-content h2 {
+        font-size: 1.2rem;
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <section id="One">
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Admin</a></li>
+                <li><a href="#">Events</a>
+                    <div class="sub-events">
+                        <ul>
+                            <li><a href="linkup.html">News</a></li>
+                            <li><a href="linkup.html">Events</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">About us</a></li>
+                <li>
+                    <a href="#">Services</a>
+                    <div class="sub-menu-1">
+                        <ul>
+                            <li><a href="#">Computer repairs</a></li>
+                            <li><a href="#">Computer upgrade</a></li>
+                            <li><a href="#">Posters</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">What do we do</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 2 (DIY Section) -->
+    <section class="two">
+        <h1>DIY</h1>
+        <p>Discover the best perks about your gaming platform. Learn how to fix common issues and optimize your gaming experience with our DIY tips and tricks!</p>
+    </section>
+
+    <section class="three">
+        <div class="content">
+            <div class="text-content">
+                <h1>XBOX</h1>
+                <h2>GAME Pass</h2>
+                <p>
+                    XBOX has what we call a Game Pass. Whether you game on console or PC, there is a Game Pass for you.
+                    Xbox Game Pass Ultimate includes online console multiplayer and hundreds of high-quality games. Play games with friends on console and PC and get an EA Play membership – all for one low monthly price.
+                </p>
+                <p>
+                    The best thing about this Game Pass is that it comes with some cool perks like:
+                    <ul>
+                        <li>Playing EA games</li>
+                        <li>Game discounts</li>
+                        <li>Multiplayer perks</li>
+                    </ul>
+                    Instead of paying for an EA membership alone, just add a few extra bucks and pay for the Xbox Ultimate Pass. You'll get EA games, cool perks, and the ability to play with your friends on console and PC, including online multiplayer.
+                </p>
+            </div>
+            <div class="image-content">
+                <h2>Cool Games Perks</h2>
+                <div class="wrapper">
+                    <div class="carousel">
+                        <img src="fc24.jpg" alt="PlayStation">
+                        <img src="sifu.avif" alt="Xbox">
+                        <img src="Tech and Gaming Retail Website in Dark Blue and Pink Simple Dark Style.png" alt="Steam">
+                        <img src="storm 4.jpeg" alt="Other">
+                    </div>
+                    <div class="controls">
+                        <i class="prev" onclick="moveCarousel(-1)">&#10094;</i>
+                        <i class="next" onclick="moveCarousel(1)">&#10095;</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script>
+        
+    const carousel = document.querySelector('.carousel');
+        let scrollAmount = 0;
+
+        function moveCarousel(direction) {
+            const scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+            const itemWidth = carousel.children[0].clientWidth + 14; // Image width + margin
+            scrollAmount += direction * itemWidth;
+
+            if (scrollAmount < 0) {
+                scrollAmount = 0;
+            } else if (scrollAmount > scrollWidth) {
+                scrollAmount = scrollWidth;
+            }
+
+            carousel.style.transform = `translateX(-${scrollAmount}px)`;
+        }
+
+    </script>
+</body>
+</html>

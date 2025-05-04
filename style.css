@@ -4,14 +4,19 @@ body {
 }
 
 .navbar {
+    position: fixed; /* Fix the navbar at the top of the window */
+    top: 0;
+    left: 0;
+    width: 100%; /* Make the navbar span the full width */
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    z-index: 1000; /* Ensure it stays above other elements */
     display: flex;
-    justify-content: space-between; /* logo on left, menu on right */
+    justify-content: center;
     align-items: center;
-    background-color: #2c2b2d;
     padding: 10px 30px;
-    height: 70px; /* better height */
-    box-shadow: 0 2px 5px rgb(255, 255, 255);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
 }
+
 
 .navbar ul {
     list-style: none;
@@ -30,11 +35,9 @@ body {
 .navbar img:hover {
     transform: scale(1.05); /* slightly larger on hover */
 }
-.navbar ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+.navbar ul li {
+    position: relative;
+    margin: 0 15px;
 }
 
 .navbar ul li {
