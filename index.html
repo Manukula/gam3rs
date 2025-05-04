@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Roboto&family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>GamersLobby</title>
+    <title>yotekh</title>
     <style>
         
  
@@ -247,6 +247,75 @@
         }
 
 
+        /* the img of diy section */
+        .DIY {
+            padding: 60px 20px;
+            background: linear-gradient(to right, #f513b5, #ff8c00);
+            text-align: center;
+            color: white;
+        }
+
+        .DIY h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .DIY h2 {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            height: 300px;
+            object-fit: cover;
+            margin-right: 14px;
+            border-radius: 10px;
+        }
+
+        .carousel img:last-child {
+            margin-right: 0;
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .controls i {
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+        }
+
+        .controls i:hover {
+            background: lightgray;
+        }
     </style>
 </head>
 
@@ -281,8 +350,8 @@
 
     <section id="two">
         <h2>game with us</h2>
-        <h2>Want a computer upgrade?</h2>
-        <h2>Need you PC fixed?</h2>
+        <h2>Want a copmuter upgrade ?</h2>
+        <h2>Need you PC fixed ?</h2>
         <h2>want a poster? talk to us</h2>
     </section>
 
@@ -291,7 +360,7 @@
     <section class="news-section">
         <h2>Our Services</h2>
         <div class="news-grid">
-            <div class="news-card">
+            <!-- <div class="news-card">
                 <img src="image1_0 (1).jpg" alt="News 1">
                 <div class="news-content">
                     <h3>Computer Support</h3>
@@ -299,7 +368,7 @@
                         <a href="read more.html" target="_blank">Read more</a>
                     </p>
                 </div>
-            </div>
+            </div> -->
     
             <div class="news-card">
                 <img src="image0_0 (1).jpg" alt="News 2">
@@ -311,18 +380,18 @@
                 </div>
             </div>
     
-            <div class="news-card">
-                <img src="IMG-20250303-WA0019.jpg" alt="News 3">
+            <!-- <div class="news-card">
+                <img src="Blue Retro Pixel Birthday Poster.png" alt="News 3">
                 <div class="news-content">
                     <h3>Need a Poster</h3>
                     <p>Whether you need a digital or physical poster, our team is more than capable of bringing your vision to life. With creativity, skill, and attention to detail, we’re ready to design eye-catching posters tailored to your needs.<br>
                         <a href="read more.html" target="_blank">Read more</a>
                     </p>
                 </div>
-            </div>
+            </div> -->
     
             <div class="news-card">
-                <img src="IMG-20250303-WA0019.jpg" alt="Our Events">
+                <img src="tournment 1.jpg" alt="Our Events">
                 <div class="news-content">
                     <h3>Our Events</h3>
                     <p>Our events will mostly take place in the city of George.<br>
@@ -333,14 +402,42 @@
     
             <!-- Fixed "DIY" news card -->
             <div class="news-card">
-                <img src="IMG-20250303-WA0019.jpg" alt="DIY">
+                <img src="DIY.jpg" alt="DIY">
                 <div class="news-content">
                     <h3>DIY</h3>
                     <p>Did you know that you can fix your computer<br>
                         just by doing these little things?<br>
-                        <a href="read more.html" target="_blank">Read more</a>
+                        <a href="DIY.html" target="_blank">Read more</a>
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section for the DIY images -->
+
+    <section class="DIY">
+        <h1>DIY</h1>
+        <h2>Discover the best perks about your gaming platform. Click below to explore!</h2>
+        <div class="wrapper">
+            <div class="carousel">
+                <a href="DIY.html" target="_blank">
+                    <img src="playstation p.jpg" alt="PlayStation">
+                </a>
+                <a href="DIY.html" target="_blank">
+                    <img src="XBOX p.jpg" alt="Xbox">
+                </a>
+                <a href="DIY.html" target="_blank">
+                    <img src="steam.jpg" alt="Steam">
+                </a>
+                <a href="DIY.html" target="_blank">
+                    <img src="OIP.jpeg" alt="Other">
+                </a>
+            </div>
+            <div class="controls">
+                <i class="prev" onclick="moveCarousel(-1)">&#10094;</i>
+                <i class="next" onclick="moveCarousel(1)">&#10095;</i>
             </div>
         </div>
     </section>
@@ -424,6 +521,26 @@
         // Clear the input field
         document.getElementById('commentInput').value = '';
     }
+
+
+    // DIy js section Code
+
+    const carousel = document.querySelector('.carousel');
+        let scrollAmount = 0;
+
+        function moveCarousel(direction) {
+            const scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+            const itemWidth = carousel.children[0].clientWidth + 14; // Image width + margin
+            scrollAmount += direction * itemWidth;
+
+            if (scrollAmount < 0) {
+                scrollAmount = 0;
+            } else if (scrollAmount > scrollWidth) {
+                scrollAmount = scrollWidth;
+            }
+
+            carousel.style.transform = `translateX(-${scrollAmount}px)`;
+        }
     </script>
     
 </body>
