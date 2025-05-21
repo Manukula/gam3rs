@@ -392,7 +392,7 @@
     <section id="One">
         <div class="navbar">
             <ul>
-                <li><a href="index.html">Admin</a></li> <!-- Updated admin to look like other navbar items -->
+                <li><a href="index.html">Home</a></li> <!-- Updated admin to look like other navbar items -->
                 <li><a href="#">Events</a>
                     <div class="sub-events">
                         <ul>
@@ -418,7 +418,7 @@
     </section>
 
   <section id="two">
-    <h2>Cooming soon</h2>
+    <h2>Coming soon</h2>
   </section>
 
   <section class="three">
@@ -444,6 +444,20 @@
         </p>
       </div>
     </div>
+
+
+
+    <!-- <section class="info">
+        <h2>for you to game with us </h2>
+
+        <p>you need to subscribe to our gaming chancel and sugn up in the game you want to play <br>
+        because if you don't on match day if we do not see your usename you won't be permited to play anygames</p>
+
+        to participate
+
+        
+
+    </section> -->
  
   </section>
 
@@ -456,11 +470,7 @@
         <strong>Join us in the world of gaming!</strong>
         register your email to compete in our tournaments and be part of our gaming community. Stay updated with the latest news, events, and exclusive offers. Don't miss out on the action – sign up now and level up your gaming experience with us!
       </p>
-      <div class="register">
-        <div>
-            <input type="email" placeholder="Enter your email">
-            <button type="submit">Register</button>
-        </div>
+     
       </div>
     </div>
    
@@ -475,15 +485,74 @@
         <strong>Hang With US</strong>  
         Register your email to compete in our tournaments and be part of our gaming community. Stay updated with the latest news, events, and exclusive offers. Don't miss out on the action – sign up now and level up your gaming experience with us!
       </p>
-      <div class="register">
-        <div>
-            <input type="email" placeholder="Enter your email">
-            <button type="submit">Register</button>
-        </div>
+     
       </div>
     </div>
     <img src="call of duty mobile).jpeg" alt="COD Mobile Game">
+    
   </section>
+
+
+
+  <!-- Game day -->
+
+    <section class="game-day">
+        <h2>Game Day on 31 May</h2>
+        <p>Join us for an exciting day of gaming competitions, fun, and camaraderie! Whether you're a seasoned player or just starting out, there's something for everyone. Don't miss out on the chance to showcase your skills and connect with fellow gamers.</p>
+        <div class="register">
+            <h3>Register Now</h3>
+           
+            <div>
+                <form class="compete-form">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                  
+                    <label for="game">Game</label>
+                    <select id="choiceType" name="choiceType" required>
+                        <option value="" disabled selected>Choose a Game</option>
+                        <option value="team">FC25</option>
+                        <option value="character">UFC 24</option>
+                        <option value="character">Mortal Kombat 11</option>
+                        <option value="character">Naruto Storm4</option>
+                        <option value="character">Call of duty</option>
+                        <option value="character">Apex Legends</option>
+                      </select>
+                  
+                    <label for="choiceType">Select</label>
+                    <select id="choiceType" name="choiceType" required>
+                      <option value="" disabled selected>Select team or character</option>
+                      <option value="team">Team</option>
+                      <option value="character">Character</option>
+                    </select>
+                  
+                    <input type="text" id="choiceValue" name="choiceValue" placeholder="Enter team or character name" required>
+                  
+                    <a href="mailto:gam3rslobby@gmail.com?subject=Game%20Day%20Registration&body=Username:%20[USERNAME]%0AGame:%20[GAME]%0AType:%20[TEAM/CHARACTER%0]AValue:%20[TEAM/CHARACTER%20NAME]">
+                        <button type="button">Submit</button>
+                    </a>
+                  </form>
+            </div>
+        </div>
+
+        <div class="image-content">
+            <h2>Cool Games Perks</h2>
+            <div class="wrapper">
+                <div class="carousel">
+                    <img src="fc24.jpg" alt="PlayStation">
+                    <img src="apex.jpeg" alt="Xbox">
+                    <img src="MK11.jpeg" alt="Xbox">
+                    <img src="fc 25.jpeg" alt="Xbox">
+                    <img src="Tech and Gaming Retail Website in Dark Blue and Pink Simple Dark Style.png" alt="Steam">
+                    <img src="storm 4.jpeg" alt="Other">
+                </div>
+                <div class="controls">
+                    <i class="prev" onclick="moveCarousel(-1)">&#10094;</i>
+                    <i class="next" onclick="moveCarousel(1)">&#10095;</i>
+                </div>
+            </div>
+        </div>
+
+
 
      <!-- Gamers Information Section -->
     <section class="handle">
@@ -565,19 +634,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 function addGamer() {
-    // Get input values
+    
     const handle = document.getElementById('handleInput').value;
     const game = document.getElementById('gameInput').value;
     const device = document.getElementById('deviceInput').value;
     const platform = document.getElementById('platformInput').value;
 
-    // Validate inputs
+   
     if (!handle || !game || !device || !platform) {
         alert('Please fill in all fields.');
         return;
     }
 
-    // Create a new row
+    // Create a new row for details for the peple 
     const tableBody = document.getElementById('gamersTableBody');
     const newRow = document.createElement('tr');
     newRow.innerHTML = `
@@ -589,7 +658,7 @@ function addGamer() {
     `;
     tableBody.appendChild(newRow);
 
-    // Save the gamer to localStorage
+    // Saveing the gamers details code section 
     const savedGamers = JSON.parse(localStorage.getItem('gamers')) || [];
     savedGamers.push({ handle, game, device, platform });
     localStorage.setItem('gamers', JSON.stringify(savedGamers));
@@ -599,12 +668,50 @@ function addGamer() {
     const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappMessage)}&phone=`;
     window.open(whatsappLink, '_blank');
 
-    // Clear input fields
+    // Clear clering  row
     document.getElementById('handleInput').value = '';
     document.getElementById('gameInput').value = '';
     document.getElementById('deviceInput').value = '';
     document.getElementById('platformInput').value = '';
 }
+
+
+// compete form
+
+
+document.querySelectorAll('.compete-form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = form.querySelector('[name="username"]').value;
+      const game = form.querySelector('[name="game"]').value;
+      const type = form.querySelector('[name="choiceType"]').value;
+      const value = form.querySelector('[name="choiceValue"]').value;
+
+      console.log("User Registered:", { username, game, [type]: value });
+
+      alert(`Thanks, ${username}! You've signed up for ${game} as ${type}: ${value}`);
+      form.reset();
+    });
+  });
+
+// image section in the game day
+
+  const carousel = document.querySelector('.carousel');
+        let scrollAmount = 0;
+
+        function moveCarousel(direction) {
+            const scrollWidth = carousel.scrollWidth - carousel.clientWidth;
+            const itemWidth = carousel.children[0].clientWidth + 14; // Image width + margin
+            scrollAmount += direction * itemWidth;
+
+            if (scrollAmount < 0) {
+                scrollAmount = 0;
+            } else if (scrollAmount > scrollWidth) {
+                scrollAmount = scrollWidth;
+            }
+
+            carousel.style.transform = `translateX(-${scrollAmount}px)`;
+        }
 
 </script>
 
