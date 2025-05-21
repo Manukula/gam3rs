@@ -204,6 +204,71 @@
         font-size: 1.2rem;
       }
     }
+
+
+
+    /* pssss */
+
+    .ppsspp {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ppsspp-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.ppsspp-text {
+    flex: 1 1 60%;
+    min-width: 280px;
+    color: #222;
+}
+
+.ppsspp-text p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.get {
+    flex: 1 1 35%;
+    min-width: 280px;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    color: #107c10;
+}
+
+.get h1, .get h2 {
+    margin-top: 0;
+    color: #107c10;
+}
+
+.get a {
+    color: #f513b5;
+    text-decoration: none;
+}
+
+.get a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .ppsspp-content {
+        flex-direction: column;
+    }
+
+    .ppsspp-text, .get {
+        flex: 1 1 100%;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -211,7 +276,7 @@
     <section id="One">
         <div class="navbar">
             <ul>
-                <li><a href="index.html">Admin</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#">Events</a>
                     <div class="sub-events">
                         <ul>
@@ -278,6 +343,35 @@
             </div>
         </div>
     </section>
+
+
+    <section class="ppsspp">
+        <div class="ppsspp-content">
+            <div class="ppsspp-text">
+                <h1>PPSSPP</h1>
+    
+                <p>Did you know you can play PPSSPP games on your phone and also on your Laptop or PC?</p>
+                <p>We know not everybody can afford a gaming PC, a computer, or buy themselves a console.</p>
+                <p>But do not let that stop you from having fun, as you can play any game you want on 
+                   your Celeron or i3 PC. And the best part is that you can play any game you want for free!</p>
+    
+                <img src="ppsspp.png" alt="PPSSPP Emulator" style="max-width: 100%; border-radius: 10px; margin-top: 20px;">
+            </div>
+    
+            <div class="get">
+                <h1>Links where to Download</h1>
+                <p>Download the PPSSPP Emulator for your PC or Android: <a href="https://www.ppsspp.org/download/" target="_blank" rel="noopener noreferrer">Download here</a></p>
+    
+                <h2>Links for Games</h2>
+                <ul>
+                    <li><a href="https://coolrom.com.au/roms/psp/" target="_blank" rel="noopener noreferrer">Cool Roms</a></li>
+                    <li><a href="https://www.emulatorgames.net/roms/playstation-portable/2/" target="_blank" rel="noopener noreferrer">Emulatorgames</a></li>
+                    <li><a href="https://www.freeroms.com/" target="_blank" rel="noopener noreferrer">Freeroms</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
 
 
 
