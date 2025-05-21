@@ -257,3 +257,160 @@ body {
         font-size: 1rem;
         color: #333;
     }
+
+
+/* gamee day section  */
+
+    
+    /* compete form */
+
+    .compete-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+        max-width: 400px;
+      }
+      
+      .compete-form input,
+      .compete-form select,
+      .compete-form button {
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-family: 'Open Sans', sans-serif;
+      }
+      
+      .compete-form button {
+        background-color: hotpink;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .compete-form button:hover {
+        background-color: deeppink;
+      }
+      
+
+    /* regisrtration form  Images*/
+
+    .wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        max-width: 100%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+  
+      .carousel {
+        display: flex;
+        transition: transform 0.4s ease-in-out;
+      }
+  
+      .carousel img {
+        height: 350px;
+        width: auto;
+        max-width: 100%;
+        border-radius: 10px;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+  
+      .controls {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+  
+      .controls i {
+        pointer-events: auto;
+        background: white;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+  
+      .controls i:hover {
+        background: #eee;
+      }
+  
+      @media (max-width: 768px) {
+        .content {
+          flex-direction: column;
+        }
+  
+        .carousel img {
+          height: 140px;
+        }
+  
+        .text-content h1 {
+          font-size: 1.8rem;
+        }
+  
+        .text-content h2, .image-content h2 {
+          font-size: 1.2rem;
+        }
+      }
+
+
+      /* welcom from the index page */
+
+      .welcome {
+        background: linear-gradient(to right, #3a86ff, #8338ec, #ff006e);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        border-radius: 10px;
+        margin: 40px auto;
+        max-width: 1200px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .welcome-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .welcome h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    .welcome p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+    
+    .welcome-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 30px;
+        background-color: #ffbe0b;
+        color: #333;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .welcome-btn:hover {
+        background-color: #ff8c00;
+        transform: scale(1.05);
+    }
