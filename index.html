@@ -350,8 +350,8 @@
 
     <section id="two">
         <h2>game with us</h2>
-        <h2>Want a computer upgrade ?</h2>
-        <h2>Need your PC fixed ?</h2>
+        <h2>Want a copmuter upgrade ?</h2>
+        <h2>Need you PC fixed ?</h2>
         <h2>want a poster? talk to us</h2>
     </section>
 
@@ -517,24 +517,53 @@
 
     <script>
           function postComment() {
-        // Get the comment input value
-        const commentInput = document.getElementById('commentInput').value;
+    // Get the comment input value
+    const commentInput = document.getElementById('commentInput').value;
 
-        // Check if the input is empty
-        if (!commentInput.trim()) {
-            alert('Please enter a comment before posting.');
-            return;
-        }
-
-        // Display the posted email section
-        const postedEmailSection = document.getElementById('postedEmailSection');
-        const postedComment = document.getElementById('postedComment');
-        postedComment.textContent = commentInput;
-        postedEmailSection.style.display = 'block';
-
-        // Clear the input field
-        document.getElementById('commentInput').value = '';
+    // Check if the input is empty
+    if (!commentInput.trim()) {
+        alert('Please enter a comment before posting.');
+        return;
     }
+
+    // Store comment and timestamp in localStorage
+    const commentData = {
+        text: commentInput,
+        timestamp: Date.now()
+    };
+    localStorage.setItem('postedComment', JSON.stringify(commentData));
+
+    // Display the posted email section
+    displayComment();
+
+    // Clear the input field
+    document.getElementById('commentInput').value = '';
+}
+
+// Function to display comment if within 24 hours
+function displayComment() {
+    const postedEmailSection = document.getElementById('postedEmailSection');
+    const postedComment = document.getElementById('postedComment');
+    const commentData = JSON.parse(localStorage.getItem('postedComment'));
+
+    if (commentData) {
+        const now = Date.now();
+        const twentyFourHours = 24 * 60 * 60 * 1000;
+        if (now - commentData.timestamp < twentyFourHours) {
+            postedComment.textContent = commentData.text;
+            postedEmailSection.style.display = 'block';
+        } else {
+            // Remove expired comment
+            localStorage.removeItem('postedComment');
+            postedEmailSection.style.display = 'none';
+        }
+    } else {
+        postedEmailSection.style.display = 'none';
+    }
+}
+
+// On page load, check if comment should be displayed
+window.addEventListener('DOMContentLoaded', displayComment);
 
 
     // DIy js section Code
