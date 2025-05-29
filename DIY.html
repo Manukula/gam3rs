@@ -396,32 +396,6 @@
             carousel.style.transform = `translateX(-${scrollAmount}px)`;
         }
 
-         // Hide navbar on scroll down, show on scroll up (mobile only)
-let lastScrollY = window.scrollY;
-let ticking = false;
-function handleNavbar() {
-  const navbarSection = document.getElementById('One');
-  if (window.innerWidth <= 700) {
-    if (window.scrollY > lastScrollY && window.scrollY > 50) {
-      navbarSection.classList.add('hide-navbar');
-    } else {
-      navbarSection.classList.remove('hide-navbar');
-    }
-    lastScrollY = window.scrollY;
-  } else {
-    navbarSection.classList.remove('hide-navbar');
-  }
-  ticking = false;
-}
-window.addEventListener('scroll', function() {
-  if (!ticking) {
-    window.requestAnimationFrame(handleNavbar);
-    ticking = true;
-  }
-});
-window.addEventListener('resize', handleNavbar);
-window.addEventListener('DOMContentLoaded', handleNavbar);
-
     </script>
 </body>
 </html>
