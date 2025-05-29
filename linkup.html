@@ -1,161 +1,530 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Roboto&family=Titillium+Web&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="script.js">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-  <style>
-    /* Style for section two */
-    #two {
-      position: relative;
-      width: 100%;
-      height: 70vh; 
-      background: url('Blue\ and\ Black\ Modern\ Sport\ Tournament\ Bracket\ Poster\ \(1\).png') no-repeat center center/cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* Optional: dark overlay over background image */
-    #two::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
-      z-index: 1;
-    }
-
-    #two h2 {
-      position: relative;
-      z-index: 2;
-      color: white;
-      font-size: 2.5rem;
-      background: rgba(0, 0, 0, 0.5); 
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    @media (max-width: 768px) {
-      #two {
-        height: 40vh; /* Slightly bigger on small screens */
-      }
-      #two h2 {
-        font-size: 1.8rem;
-      }
-    }
-
-  /* Section Three */
-.three {
-    padding: 40px 20px;
-    background-color: #f4f4f9;
-    color: #333;
-}
-
-/* Flex container for the two sections inside 'three' */
-.three-content {
-    display: flex;
-    flex-direction: row; /* Display sections side by side */
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 20px;
-}
-
-.three h1 {
-    font-size: 3.5rem;
-    color: #222;
-    text-align: center;
-    margin-bottom: 20px;
+body {
+    margin: 0;
     font-family: 'Poppins', sans-serif;
 }
 
-.three h3 {
-    font-size: 2rem;
-    padding-left: 8%;
-    color: #444;
-    margin-bottom: 15px;
-    font-family: 'Roboto', sans-serif;
+.navbar {
+    position: fixed; /* Fix the navbar at the top of the window */
+    top: 0;
+    left: 0;
+    width: 100%; /* Make the navbar span the full width */
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    z-index: 1000; /* Ensure it stays above other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
 }
 
-.three p {
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar img {
+    width: 120px; /* slightly larger */
+    height: 80px; /* maintain aspect ratio */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+ }
+
+.navbar img:hover {
+    transform: scale(1.05); /* slightly larger on hover */
+}
+.navbar ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.navbar ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+
+
+.navbar ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.navbar ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #efeae9;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+/* Services submenu */
+.sub-menu-1 {
+    display: none;
+    position: absolute;
+    background: #40038a; /* Match navbar */
+    padding: 5px 0;
+    min-width: 150px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 999;
+}
+
+.navbar ul li {
+    position: relative; /* Required for submenu positioning */
+}
+
+.navbar ul li:hover .sub-menu-1 {
+    display: block;
+}
+
+.navbar ul li:hover .sub-menu-1 ul{
+    display: block;
+    margin: 10px;
+
+}
+
+.navbar ul li:hover .sub-menu-1 ul li{
+
+    width: 150px;
+    padding: 10px;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.sub-menu-1 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-menu-1 ul li {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    text-align: left;
+}
+
+.sub-menu-1 ul li a {
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+}
+
+.sub-menu-1 ul li:hover {
+    background-color: #5e28a3; /* Slightly lighter purple on hover */
+}
+
+.sub-menu-1 ul li a {
+         transition: color 0.3s ease; 
+
+         background: 0.3s ease;
+}
+
+.sub-events {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background: #40038a; /* Match navbar background */
+    padding: 5px 0;
+    min-width: 150px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    border-radius: 4px; /* Rounded corners */
+    z-index: 999; /* Ensure it appears above other elements */
+}
+
+.sub-events ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-events ul li {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Add subtle divider */
+    background: transparent;
+    text-align: left;
+    display: block; /* Ensure items stack vertically */
+}
+
+.sub-events ul li a {
+    color: #fff; /* White text */
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease, background 0.3s ease; /* Smooth hover effect */
+}
+
+.sub-events ul li:hover {
+    background-color: #5e28a3; /* Slightly lighter purple on hover */
+}
+
+.sub-events ul li a:hover {
+    color: #e5e5e4; /* Add hover effect for text */
+}
+
+/* Show sub-events on hover */
+.navbar ul li:hover .sub-events {
+    display: block; /* Make dropdown visible */
+}
+
+
+
+
+     /* Comment section styling */
+    .comment-section {
+        padding: 60px 20px;
+        background-color: #2bc9e9;
+        text-align: center;
+    }
+
+    .comment-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .comment-section form {
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+
+    .comment-section textarea {
+        width: 100%;
+        padding: 15px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .comment-section button {
+        margin-top: 10px;
+        padding: 10px 25px;
+        background-color: #001d3d;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .posted-email {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+    }
+
+    .posted-email h3 {
+        color: #001d3d;
+        margin-bottom: 10px;
+    }
+
+    .posted-email p {
+        font-size: 1rem;
+        color: #333;
+    }
+
+
+/* gamee day section  */
+
+.game-day {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #87CEEB, #ADD8E6, #4682B4); /* Sky blue, baby blue, and ocean blue */
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.game-day-content {
+    display: flex;
+    flex-direction: row; /* Align items side by side */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.game-day-info {
+    flex: 1; /* Take up equal space */
+    text-align: left;
+}
+
+.game-day-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.game-day-info p {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #555;
-    max-width: 800px;
-    margin: 20px auto;
-    text-align: justify;
-    font-family: 'Open Sans', sans-serif;
 }
 
-/* Text alignment within the two sections */
-.gaming-text, .gaming-education {
-    flex: 1; /* Allow both divs to take equal space */
+
+    .register {
+    flex: 1; /* Take up equal space */
+    text-align: right;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    max-width: 400px;
+    margin-left: auto; /* Align the form box to the right */
+}
+
+.compete-form label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.compete-form input,
+.compete-form select {
+    width: 100%;
     padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.8); /* Slightly opaque input background */
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    /* Stack sections in column format for smaller screens */
-    .three-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .three h1 {
-        font-size: 2.5rem;
-    }
-    
-    .three h3 {
-        font-size: 1.5rem;
-    }
+.compete-form input::placeholder {
+    color: #aaa;
+}
 
-    .three p {
-        font-size: 1rem;
+.compete-form button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #FFD700; /* Gold color */
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.compete-form button:hover {
+    background-color: #FFA500; /* Orange color on hover */
+    transform: scale(1.05);
+}
+      
+
+    /* regisrtration form  Images*/
+
+    .wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
         max-width: 100%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+  
+      .carousel {
+        display: flex;
+        transition: transform 0.4s ease-in-out;
+      }
+  
+      .carousel img {
+        height: 350px;
+        width: auto;
+        max-width: 100%;
+        border-radius: 10px;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+  
+      .controls {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+  
+      .controls i {
+        pointer-events: auto;
+        background: white;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+  
+      .controls i:hover {
+        background: #eee;
+      }
+  
+      @media (max-width: 768px) {
+        .content {
+          flex-direction: column;
+        }
+  
+        .carousel img {
+          height: 140px;
+        }
+  
+        .text-content h1 {
+          font-size: 1.8rem;
+        }
+  
+        .text-content h2, .image-content h2 {
+          font-size: 1.2rem;
+        }
+      }
+
+
+      /* welcom from the index page */
+
+      .welcome {
+        background: linear-gradient(to right, #3a86ff, #8338ec, #ff006e);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        border-radius: 10px;
+        margin: 40px auto;
+        max-width: 1200px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
+    
+    .welcome-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .welcome h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    .welcome p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+    
+    .welcome-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 30px;
+        background-color: #ffbe0b;
+        color: #333;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .welcome-btn:hover {
+        background-color: #ff8c00;
+        transform: scale(1.05);
+    }
+
+    /* Strong and styled Game Day Register Button */
+.register-btn button {
+    padding: 14px 36px;
+    background: linear-gradient(90deg, #FFD700 60%, #FFA500 100%);
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    outline: none;
 }
 
+.register-btn button:hover,
+.register-btn button:focus {
+    background: linear-gradient(90deg, #FFA500 60%, #FFD700 100%);
+    color: #111;
+    transform: scale(1.07);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
 
-
-
-    /* FC25 Section */
-/* FC25 Section */
+/* FC25 Section Responsive Fix */
 .fc25 {
     position: relative;
     display: flex;
-    flex-direction: row; /* Stack image, heading, and text vertically */
-    align-items: left;
+    flex-direction: row;
+    align-items: flex-start;
     padding: 20px;
     background-color: #f9f9f9;
+    gap: 24px;
 }
 
 .fc25 img {
-    width: 800px;
-    height: 500px ;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
-    margin-bottom: 40px;
-    align-self: center;
+    margin-bottom: 0;
+    align-self: flex-start;
     padding: 10px;
+    border-radius: 12px;
 }
 
 .fc25-text {
+    flex: 1;
     text-align: left;
+    min-width: 0;
 }
 
 .fc25 h2 {
     color: hotpink;
-    font-size: 6rem;
-    margin: 10px;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    margin: 10px 0 10px 0;
 }
 
 .fc25 p {
@@ -163,103 +532,37 @@
     line-height: 1.6;
     color: #555;
     max-width: 600px;
-    margin: 10px;
+    margin: 10px 0;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 768px) {
-    .fc25 img {
-        width: 100%;
-    }
-    .fc25 h2 {
-        font-size: 1.5rem;
-    }
-}
-
-/* fc25 register  */
-.register {
-    margin-top: 20px;
-}
-
-.register div {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-}
-
-.register input[type="email"] {
-    padding: 12px 20px;
-    font-size: 1rem;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    outline: none;
-    transition: 0.3s;
-}
-
-.register input[type="email"]:focus {
-    border-color: hotpink;
-    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
-}
-
-.register button {
-    padding: 12px 20px;
-    font-size: 1rem;
-    background-color: hotpink;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.register button:hover {
-    background-color: deeppink;
-    transform: scale(1.05);
-}
-
-/* Make it responsive on smaller screens */
-@media (max-width: 768px) {
-    .register div {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .register input[type="email"] {
-        width: 100%;
-    }
-
-    .register button {
-        width: 100%;
-    }
-}
-
-/* COD-Mobile Section */
+/* COD-Mobile Section Responsive Fix */
 .cod-mobile {
     display: flex;
-    flex-direction: row; /* Image on right, text on left */
+    flex-direction: row;
     align-items: center;
     padding: 20px;
     background-color: #f9f9f9;
-    gap: 20px;
+    gap: 24px;
 }
 
 .cod-mobile img {
-    width: 800px;
-    height: 500px;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
     padding: 10px;
+    border-radius: 12px;
 }
 
 .cod-mobile-text {
     flex: 1;
     text-align: left;
+    min-width: 0;
 }
 
 .cod-mobile-text h2 {
     color: deeppink;
-    font-size: 4rem;
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
@@ -272,448 +575,29 @@
 }
 
 /* Responsive for smaller screens */
-@media (max-width: 768px) {
-    .cod-mobile {
-        flex-direction: column; /* Stack vertically on mobile */
+@media (max-width: 900px) {
+    .fc25, .cod-mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 12px;
     }
-
-    .cod-mobile img {
+    .fc25 img, .cod-mobile img {
         width: 100%;
         height: auto;
+        margin-bottom: 0;
+        padding: 0;
     }
-
-    .cod-mobile-text h2 {
-        font-size: 2rem;
+    .fc25 h2, .cod-mobile-text h2 {
+        font-size: 1.5rem;
+    }
+    .fc25-text, .cod-mobile-text {
+        text-align: left;
+        width: 100%;
+        margin: 0;
+    }
+    .fc25 p, .cod-mobile-text p {
+        font-size: 0.98rem;
+        max-width: 100%;
     }
 }
-
-   /* handle section */
-   .handle {
-            padding: 40px 20px;
-            background-color: #1e1e2f;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .handle h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: hotpink;
-        }
-
-        .handle table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #2e2e3e;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .handle th, .handle td {
-            padding: 16px;
-            text-align: left;
-            border-bottom: 1px solid #444;
-        }
-
-        .handle th {
-            background-color: #3a3a4d;
-            color: #f0f0f0;
-            font-weight: 600;
-        }
-
-        .handle td input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #444;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            outline: none;
-            font-family: inherit;
-        }
-
-        .handle td input[type="text"]::placeholder {
-            color: #bbb;
-        }
-
-        .remove-btn {
-            color: red;
-            cursor: pointer;
-            font-size: 1.2rem;
-            border: none;
-            background: none;
-        }
-
-        /* Responsive table */
-        @media (max-width: 768px) {
-            .handle table,
-            .handle thead,
-            .handle tbody,
-            .handle th,
-            .handle td,
-            .handle tr {
-                display: block;
-            }
-
-            .handle tr {
-                margin-bottom: 20px;
-                background: #2e2e3e;
-                border-radius: 10px;
-                padding: 10px;
-            }
-
-            .handle td {
-                padding: 10px;
-                text-align: right;
-                position: relative;
-            }
-
-            .handle td::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 10px;
-                top: 10px;
-                color: #ccc;
-                font-weight: bold;
-                text-align: left;
-            }
-
-            .handle th {
-                display: none;
-            }
-        }
-
-  </style>
-</head>
-
-<body>
-    <section id="One">
-        <div class="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li> <!-- Updated admin to look like other navbar items -->
-                <li><a href="#">Events</a>
-                    <div class="sub-events">
-                        <ul>
-                            <li><a href="linkup.html">News</a></li>
-                            <li><a href="linkup.html">Events</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">About us</a></li>
-                <li>
-                    <a href="#">Services</a>
-                    <div class="sub-menu-1">
-                        <ul>
-                            <li><a href="#">Computer repairs</a></li>
-                            <li><a href="#">Computer upgrade</a></li>
-                            <li><a href="#">Posters</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">What do we do</a></li>
-            </ul>
-        </div>
-    </section>
-
-  <section id="two">
-    <h2>Coming soon</h2>
-  </section>
-
-  <section class="three">
-    <h1>Gaming </h1>
-    <div class="three-content">
-      <div class="gaming-text">
-        <h3>Let's talk about gaming</h3>
-        <p>
-            Importance of gaming in our lives. Gaming has become a significant part of modern culture, providing entertainment, social interaction, and even educational opportunities. It fosters creativity, problem-solving skills, and teamwork. Moreover, gaming can serve as a stress reliever and a way to connect with others across the globe. As technology advances, the gaming industry continues to evolve, offering immersive experiences that captivate players of all ages. Whether through console gaming, PC gaming, or mobile apps, the impact of gaming on society is undeniable.
-            <br><br>
-            As we embrace this digital age, understanding the role of gaming in our lives becomes increasingly important.
-        </p>
-      </div>
-  
-      <div class="gaming-education">
-        <h3>Gaming and Education</h3>
-        <p>
-            The intersection of gaming and education has gained significant attention in recent years. Educational games, often referred to as "edutainment," leverage the engaging aspects of gaming to enhance learning experiences. These games can teach various subjects, from mathematics and science to history and language skills, making learning more interactive and enjoyable. By incorporating game mechanics, such as rewards, challenges, and competition, educators can motivate students to actively participate in their learning journey. 
-            <br><br>
-            Furthermore, gaming can foster critical thinking, problem-solving abilities, and collaboration among peers. As technology continues to advance, the potential for using gaming as a powerful educational tool will only grow, shaping the future of learning in innovative ways.
-            <br><br>
-            Our aim is to expose the people of George, even Western Cape, to the world of gaming, and our hope one day is to start our own gaming mini-center and even compete in esports with our own team. We also envision hosting tournaments at our own gaming center.
-        </p>
-      </div>
-    </div>
-
-
-
-    <!-- <section class="info">
-        <h2>for you to game with us </h2>
-
-        <p>you need to subscribe to our gaming chancel and sugn up in the game you want to play <br>
-        because if you don't on match day if we do not see your usename you won't be permited to play anygames</p>
-
-        to participate
-
-        
-
-    </section> -->
- 
-  </section>
-
-  <section class="fc25">
-    <img src="FC25 taateam.png" alt="game 2">
-    <div class="fc25-text">
-      <h2>FC25 TagTeam</h2>
-      <p>FC25 TagTeam is a thrilling gaming experience that combines the excitement of tag team battles with the strategic depth of football. Players can form dynamic duos, executing powerful combos and tactics to outsmart their opponents. With stunning graphics and immersive gameplay, FC25 TagTeam offers an adrenaline-pumping adventure for gamers of all ages. Whether you're teaming up with friends or challenging rivals online, this game promises endless fun and competition in the world of virtual football.
-    <br><br>
-        <strong>Join us in the world of gaming!</strong>
-        register your email to compete in our tournaments and be part of our gaming community. Stay updated with the latest news, events, and exclusive offers. Don't miss out on the action – sign up now and level up your gaming experience with us!
-      </p>
-     
-      </div>
-    </div>
-   
-  </section>
-
-  <section class="cod-mobile">
-    <div class="cod-mobile-text">
-      <h2>COD-Mobile HangOUT</h2>
-      <p>COD-Mobile HangOUT is an exhilarating gaming experience designed to unite players within the Call of Duty Mobile universe. It’s a vibrant platform where gamers connect, strategize, and battle it out in intense multiplayer matches. With a strong focus on teamwork and communication, we foster a community where players of all skill levels can share tips, tactics, and experiences. Whether you're a seasoned veteran or new to the franchise, COD-Mobile HangOUT offers the perfect space for camaraderie, competition, and unforgettable moments.
-        And don’t worry — whether you play with your fingers or a console controller, there’s no judgment here. If you think you’re the best, come and show us what you’ve got!
-        <br><br>
-        <strong>Hang With US</strong>  
-        Register your email to compete in our tournaments and be part of our gaming community. Stay updated with the latest news, events, and exclusive offers. Don't miss out on the action – sign up now and level up your gaming experience with us!
-      </p>
-     
-      </div>
-    </div>
-    <img src="call of duty mobile).jpeg" alt="COD Mobile Game">
-    
-  </section>
-
-
-
-  <!-- Game day -->
-
-    <section class="game-day">
-        <h2>Game Day on 31 May</h2>
-        <p>Join us for an exciting day of gaming competitions, fun, and camaraderie! Whether you're a seasoned player or just starting out, there's something for everyone. Don't miss out on the chance to showcase your skills and connect with fellow gamers.</p>
-        <div class="register">
-            <h3>Register Now</h3>
-           
-            <div>
-                <form class="compete-form">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
-                  
-                    <label for="game">Game</label>
-                    <select id="choiceType" name="choiceType" required>
-                        <option value="" disabled selected>Choose a Game</option>
-                        <option value="team">FC25</option>
-                        <option value="character">UFC 24</option>
-                        <option value="character">Mortal Kombat 11</option>
-                        <option value="character">Naruto Storm4</option>
-                        <option value="character">Call of duty</option>
-                        <option value="character">Apex Legends</option>
-                      </select>
-                  
-                    <label for="choiceType">Select</label>
-                    <select id="choiceType" name="choiceType" required>
-                      <option value="" disabled selected>Select team or character</option>
-                      <option value="team">Team</option>
-                      <option value="character">Character</option>
-                    </select>
-                  
-                    <input type="text" id="choiceValue" name="choiceValue" placeholder="Enter team or character name" required>
-                  
-                    <a href="mailto:gam3rslobby@gmail.com?subject=Game%20Day%20Registration&body=Username:%20[USERNAME]%0AGame:%20[GAME]%0AType:%20[TEAM/CHARACTER%0]AValue:%20[TEAM/CHARACTER%20NAME]">
-                        <button type="button">Submit</button>
-                    </a>
-                  </form>
-            </div>
-        </div>
-
-        <div class="image-content">
-            <h2>Cool Games Perks</h2>
-            <div class="wrapper">
-                <div class="carousel">
-                    <img src="fc24.jpg" alt="PlayStation">
-                    <img src="apex.jpeg" alt="Xbox">
-                    <img src="MK11.jpeg" alt="Xbox">
-                    <img src="fc 25.jpeg" alt="Xbox">
-                    <img src="Tech and Gaming Retail Website in Dark Blue and Pink Simple Dark Style.png" alt="Steam">
-                    <img src="storm 4.jpeg" alt="Other">
-                </div>
-                <div class="controls">
-                    <i class="prev" onclick="moveCarousel(-1)">&#10094;</i>
-                    <i class="next" onclick="moveCarousel(1)">&#10095;</i>
-                </div>
-            </div>
-        </div>
-
-
-
-     <!-- Gamers Information Section -->
-    <section class="handle">
-      <h2>Gamers Information</h2>
-      <table id="gamersTable">
-          <thead>
-              <tr>
-                  <th>Handle</th>
-                  <th>Game Name</th>
-                  <th>Device</th>
-                  <th>Platform</th>
-                  <th>Action</th>
-              </tr>
-          </thead>
-          <tbody id="gamersTableBody">
-              <tr>
-                  <td><input type="text" id="handleInput" placeholder="Enter handle"></td>
-                  <td><input type="text" id="gameInput" placeholder="Enter game name"></td>
-                  <td><input type="text" id="deviceInput" placeholder="Enter device"></td>
-                  <td><input type="text" id="platformInput" placeholder="Enter platform"></td>
-                  <td></td>
-              </tr>
-          </tbody>
-      </table>
-      <div style="margin-top: 15px; text-align: center;">
-        <button onclick="addGamer()" style="padding: 10px 20px; background-color: hotpink; border: none; border-radius: 6px; color: white; cursor: pointer;">Add Gamer</button>
-    </div>
-  </section>
-
-
-  <!-- coment section -->
-
-
-  <section class="comment-section">
-    <h2>Leave a Comment</h2>
-    <form id="commentForm">
-      <textarea id="commentInput" name="comment" placeholder="Your comment..." required></textarea>
-      <button type="button" onclick="postComment()">Posts a comment</button>
-    </form>
-    <div id="postedEmailSection" class="posted-email" style="display: none;">
-      <h3>anonymous</h3>
-      <p id="postedComment"></p>
-    </div>
-  </section>
-
-       
-           <!-- Footer -->
-     <footer style="background-color: #000; color: white; padding: 40px 20px; text-align: center;">
-  
-      <div style="margin-bottom: 10px;">
-        <strong>Gamers Lobby</strong>
-        <span style="color: #fdd835;">gam3rslobby@gmail.com</span>
-      </div>
-      <div style="font-size: 12px; color: #aaa;">
-     
-      </div>
-    </footer>
-  </section>
-
-  <script>
-    const ADMIN_PASSWORD = "admin123"; // Set your admin password here
-
-// Load saved gamers from localStorage when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    const savedGamers = JSON.parse(localStorage.getItem('gamers')) || [];
-    const tableBody = document.getElementById('gamersTableBody');
-
-    // Populate the table with saved gamers
-    savedGamers.forEach(gamer => {
-        const newRow = document.createElement('tr');
-        newRow.innerHTML = `
-            <td>${gamer.handle}</td>
-            <td>${gamer.game}</td>
-            <td>${gamer.device}</td>
-            <td>${gamer.platform}</td>
-            <td><button class="remove-btn" onclick="removeGamer(this)">&#10006;</button></td>
-        `;
-        tableBody.appendChild(newRow);
-    });
-});
-function addGamer() {
-    
-    const handle = document.getElementById('handleInput').value;
-    const game = document.getElementById('gameInput').value;
-    const device = document.getElementById('deviceInput').value;
-    const platform = document.getElementById('platformInput').value;
-
-   
-    if (!handle || !game || !device || !platform) {
-        alert('Please fill in all fields.');
-        return;
-    }
-
-    // Create a new row for details for the peple 
-    const tableBody = document.getElementById('gamersTableBody');
-    const newRow = document.createElement('tr');
-    newRow.innerHTML = `
-        <td>${handle}</td>
-        <td>${game}</td>
-        <td>${device}</td>
-        <td>${platform}</td>
-        <td><button class="remove-btn" onclick="removeGamer(this)">&#10006;</button></td>
-    `;
-    tableBody.appendChild(newRow);
-
-    // Saveing the gamers details code section 
-    const savedGamers = JSON.parse(localStorage.getItem('gamers')) || [];
-    savedGamers.push({ handle, game, device, platform });
-    localStorage.setItem('gamers', JSON.stringify(savedGamers));
-
-    // Send details to WhatsApp
-    const whatsappMessage = `New Gamer Added:\nHandle: ${handle}\nGame: ${game}\nDevice: ${device}\nPlatform: ${platform}`;
-    const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappMessage)}&phone=`;
-    window.open(whatsappLink, '_blank');
-
-    // Clear clering  row
-    document.getElementById('handleInput').value = '';
-    document.getElementById('gameInput').value = '';
-    document.getElementById('deviceInput').value = '';
-    document.getElementById('platformInput').value = '';
-}
-
-
-// compete form
-
-
-document.querySelectorAll('.compete-form').forEach(form => {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const username = form.querySelector('[name="username"]').value;
-      const game = form.querySelector('[name="game"]').value;
-      const type = form.querySelector('[name="choiceType"]').value;
-      const value = form.querySelector('[name="choiceValue"]').value;
-
-      console.log("User Registered:", { username, game, [type]: value });
-
-      alert(`Thanks, ${username}! You've signed up for ${game} as ${type}: ${value}`);
-      form.reset();
-    });
-  });
-
-// image section in the game day
-
-  const carousel = document.querySelector('.carousel');
-        let scrollAmount = 0;
-
-        function moveCarousel(direction) {
-            const scrollWidth = carousel.scrollWidth - carousel.clientWidth;
-            const itemWidth = carousel.children[0].clientWidth + 14; // Image width + margin
-            scrollAmount += direction * itemWidth;
-
-            if (scrollAmount < 0) {
-                scrollAmount = 0;
-            } else if (scrollAmount > scrollWidth) {
-                scrollAmount = scrollWidth;
-            }
-
-            carousel.style.transform = `translateX(-${scrollAmount}px)`;
-        }
-
-</script>
-
-</html>
-
