@@ -316,15 +316,6 @@
         .controls i:hover {
             background: lightgray;
         }
-
-        /* Hide navbar on scroll down, show on scroll up (mobile only) */
-        #One {
-            transition: top 0.3s;
-        }
-
-        .hide-navbar {
-            top: -100px; /* Adjust based on your navbar height */
-        }
     </style>
 </head>
 
@@ -526,53 +517,24 @@
 
     <script>
           function postComment() {
-    // Get the comment input value
-    const commentInput = document.getElementById('commentInput').value;
+        // Get the comment input value
+        const commentInput = document.getElementById('commentInput').value;
 
-    // Check if the input is empty
-    if (!commentInput.trim()) {
-        alert('Please enter a comment before posting.');
-        return;
-    }
-
-    // Store comment and timestamp in localStorage
-    const commentData = {
-        text: commentInput,
-        timestamp: Date.now()
-    };
-    localStorage.setItem('postedComment', JSON.stringify(commentData));
-
-    // Display the posted email section
-    displayComment();
-
-    // Clear the input field
-    document.getElementById('commentInput').value = '';
-}
-
-// Function to display comment if within 24 hours
-function displayComment() {
-    const postedEmailSection = document.getElementById('postedEmailSection');
-    const postedComment = document.getElementById('postedComment');
-    const commentData = JSON.parse(localStorage.getItem('postedComment'));
-
-    if (commentData) {
-        const now = Date.now();
-        const twentyFourHours = 24 * 60 * 60 * 1000;
-        if (now - commentData.timestamp < twentyFourHours) {
-            postedComment.textContent = commentData.text;
-            postedEmailSection.style.display = 'block';
-        } else {
-            // Remove expired comment
-            localStorage.removeItem('postedComment');
-            postedEmailSection.style.display = 'none';
+        // Check if the input is empty
+        if (!commentInput.trim()) {
+            alert('Please enter a comment before posting.');
+            return;
         }
-    } else {
-        postedEmailSection.style.display = 'none';
-    }
-}
 
-// On page load, check if comment should be displayed
-window.addEventListener('DOMContentLoaded', displayComment);
+        // Display the posted email section
+        const postedEmailSection = document.getElementById('postedEmailSection');
+        const postedComment = document.getElementById('postedComment');
+        postedComment.textContent = commentInput;
+        postedEmailSection.style.display = 'block';
+
+        // Clear the input field
+        document.getElementById('commentInput').value = '';
+    }
 
 
     // DIy js section Code
@@ -593,32 +555,6 @@ window.addEventListener('DOMContentLoaded', displayComment);
 
             carousel.style.transform = `translateX(-${scrollAmount}px)`;
         }
-
-        // Hide navbar on scroll down, show on scroll up (mobile only)
-let lastScrollY = window.scrollY;
-let ticking = false;
-function handleNavbar() {
-  const navbarSection = document.getElementById('One');
-  if (window.innerWidth <= 700) {
-    if (window.scrollY > lastScrollY && window.scrollY > 50) {
-      navbarSection.classList.add('hide-navbar');
-    } else {
-      navbarSection.classList.remove('hide-navbar');
-    }
-    lastScrollY = window.scrollY;
-  } else {
-    navbarSection.classList.remove('hide-navbar');
-  }
-  ticking = false;
-}
-window.addEventListener('scroll', function() {
-  if (!ticking) {
-    window.requestAnimationFrame(handleNavbar);
-    ticking = true;
-  }
-});
-window.addEventListener('resize', handleNavbar);
-window.addEventListener('DOMContentLoaded', handleNavbar);
     </script>
     
 </body>
