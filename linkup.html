@@ -462,17 +462,19 @@
   </section>
 
   <section class="fc25">
-  <div class="fc25-text">
-    <h2>FC25 TagTeam</h2>
-    <p>
-      FC25 TagTeam is a thrilling gaming experience that combines the excitement of tag team battles with the strategic depth of football. Players can form dynamic duos, executing powerful combos and tactics to outsmart their opponents. With stunning graphics and immersive gameplay, FC25 TagTeam offers an adrenaline-pumping adventure for gamers of all ages. Whether you're teaming up with friends or challenging rivals online, this game promises endless fun and competition in the world of virtual football.
-      <br><br>
-      <strong>Join us in the world of gaming!</strong>
-      Register your email to compete in our tournaments and be part of our gaming community. Stay updated with the latest news, events, and exclusive offers. Don't miss out on the action – sign up now and level up your gaming experience with us!
-    </p>
-  </div>
-  <img src="FC25 taateam.png" alt="game 2">
-</section>
+    <img src="FC25 taateam.png" alt="game 2">
+    <div class="fc25-text">
+      <h2>FC25 TagTeam</h2>
+      <p>FC25 TagTeam is a thrilling gaming experience that combines the excitement of tag team battles with the strategic depth of football. Players can form dynamic duos, executing powerful combos and tactics to outsmart their opponents. With stunning graphics and immersive gameplay, FC25 TagTeam offers an adrenaline-pumping adventure for gamers of all ages. Whether you're teaming up with friends or challenging rivals online, this game promises endless fun and competition in the world of virtual football.
+    <br><br>
+        <strong>Join us in the world of gaming!</strong>
+        register your email to compete in our tournaments and be part of our gaming community. Stay updated with the latest news, events, and exclusive offers. Don't miss out on the action – sign up now and level up your gaming experience with us!
+      </p>
+     
+      </div>
+    </div>
+   
+  </section>
 
   <section class="cod-mobile">
     <div class="cod-mobile-text">
@@ -494,6 +496,8 @@
 
   <!-- Game day -->
 
+   <!-- Game day -->
+
     <section class="game-day">
   <div class="game-day-flex">
     <!-- Left: Info -->
@@ -503,7 +507,7 @@
         Join us for an exciting day of gaming competitions, fun, and camaraderie! Whether you're a seasoned player or just starting out, there's something for everyone. Don't miss out on the chance to showcase your skills and connect with fellow gamers.
       </p>
       <a href="mailto:gam3rslobby@gmail.com?subject=Game%20Day%20Registration&body=NOTE:[Please fill in the info below]%0AUsername:%20[USERNAME]%0AGame:%20[GAME]%0AType:%20[TEAM/CHARACTER]%0AValue:%20[TEAM/CHARACTER%20NAME]" class="register-btn">
-        <button type="button">Register To Play</button>
+        <button type="button" class="register-to-play-btn">Register To Play</button>
       </a>
     </div>
     <!-- Right: Focus Games Carousel -->
@@ -529,7 +533,7 @@
 
 
 
-  <!-- Gamers Information Section -->
+     <!-- Gamers Information Section -->
     <section class="handle">
       <h2>Gamers Information</h2>
       <table id="gamersTable">
@@ -688,33 +692,48 @@ document.querySelectorAll('.compete-form').forEach(form => {
             carousel.style.transform = `translateX(-${scrollAmount}px)`;
         }
 
-         // Hide navbar on scroll down, show on scroll up (mobile only)
-let lastScrollY = window.scrollY;
-let ticking = false;
-function handleNavbar() {
-  const navbarSection = document.getElementById('One');
-  if (window.innerWidth <= 700) {
-    if (window.scrollY > lastScrollY && window.scrollY > 50) {
-      navbarSection.classList.add('hide-navbar');
-    } else {
-      navbarSection.classList.remove('hide-navbar');
-    }
-    lastScrollY = window.scrollY;
-  } else {
-    navbarSection.classList.remove('hide-navbar');
-  }
-  ticking = false;
+// Comment Section: Save and load comment with 24-hour expiry
+function postComment() {
+    const comment = document.getElementById('commentInput').value.trim();
+    if (!comment) return;
+    const commentData = {
+        text: comment,
+        timestamp: Date.now()
+    };
+    localStorage.setItem('userComment', JSON.stringify(commentData));
+    showComment(commentData.text);
+    document.getElementById('commentForm').reset();
 }
-window.addEventListener('scroll', function() {
-  if (!ticking) {
-    window.requestAnimationFrame(handleNavbar);
-    ticking = true;
-  }
-});
-window.addEventListener('resize', handleNavbar);
-window.addEventListener('DOMContentLoaded', handleNavbar);
 
-</script>
+function showComment(comment) {
+    document.getElementById('postedComment').textContent = comment;
+    document.getElementById('postedEmailSection').style.display = 'block';
+}
+
+function hideComment() {
+    document.getElementById('postedEmailSection').style.display = 'none';
+    document.getElementById('postedComment').textContent = '';
+}
+
+// On page load, check for comment and expiry
+document.addEventListener('DOMContentLoaded', () => {
+    // ...existing code for gamers...
+    const commentData = JSON.parse(localStorage.getItem('userComment'));
+    if (commentData) {
+        const now = Date.now();
+        const age = now - commentData.timestamp;
+        if (age < 24 * 60 * 60 * 1000) { // 24 hours in ms
+            showComment(commentData.text);
+        } else {
+            localStorage.removeItem('userComment');
+            hideComment();
+        }
+    } else {
+        hideComment();
+    }
+});
+
+  </script>
 
 </html>
 
