@@ -132,8 +132,8 @@
 .fc25 {
     position: relative;
     display: flex;
-    flex-direction: row; /* Stack image, heading, and text vertically */
-    align-items: left;
+    flex-direction: row;
+    align-items: flex-start;
     padding: 20px;
     background-color: #f9f9f9;
 }
@@ -168,11 +168,24 @@
 
 /* Responsive for smaller screens */
 @media (max-width: 768px) {
+    .fc25 {
+        flex-direction: column; /* Stack image on top, text below */
+        align-items: center;
+        padding: 10px;
+    }
     .fc25 img {
         width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    .fc25-text {
+        text-align: left;
+        width: 100%;
+        margin-top: 0;
     }
     .fc25 h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 }
 
