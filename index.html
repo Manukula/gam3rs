@@ -1,65 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Roboto&family=Titillium+Web&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Gam3rsLobby</title>
-    <style>
-        
- 
-        /* Section with animated background */
-        #two {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-            color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 10cm;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YOTekh</title>
 
-        #two::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 200%;
-            background: url('image0_0.jpg') repeat-x, url('image1_0.jpg') repeat-x;
-            background-size: cover;
-            animation: slideBg 20s linear infinite;
-            z-index: -1;
-            opacity: 0.5;
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Roboto&family=Titillium+Web&display=swap" rel="stylesheet" />
 
-        @keyframes slideBg {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(-50%);
-            }
-        }
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-        #two h2 {
-            margin: 20px;
-            font-size: 2em;
-            z-index: 1;
-        }
-
-     
-
-        /* services sub-menu */
-       
+  <link rel="stylesheet" href="Styles.css">
+  <link rel="stylesheet" href="script.js">
 
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+
+    .header {
+      min-height: 40vh;
+      width: 100%;
+      background: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('P/image0_0.jpg');
+        background-size: cover;
+      background-position: 0% center;
+      background-repeat: no-repeat;
+      animation: slideBg 20s linear infinite;
+      position: relative;
+    
+    }
+    
+    @keyframes slideBg {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: 100% center;
+    }
+    }
+
+    nav {
+      display: flex;
+      padding: 2% 6%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      flex: 1;
+      text-align: right;
+    }
+
+    .nav-links ul {
+      list-style: none;
+    }
+
+    .nav-links ul li {
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+    }
+
+    .nav-links ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .nav-links ul li::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background: #f44336;
+      display: block;
+      margin: auto;
+      transition: 0.5s;
+    }
+
+    .nav-links ul li:hover::after {
+      width: 100%;
+    }
+
+    nav .fa-bars,
+    nav .fa-times {
+      display: none;
+    }
+
+    /* Responsive nav styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 0.5s;
+      }
+
+      .nav-links ul {
+        display: block;
+        padding: 30px;
+      }
+
+      .nav-links ul li {
+        display: block;
+        margin: 20px 0;
+      }
+
+      nav .fa-bars,
+      nav .fa-times {
+        display: block;
+        color: #fff;
+        font-size: 28px;
+        cursor: pointer;
+      }
+    }
+    
+
+    
 #three {
                 background-color: #fff0;
                 padding: 60px 20px;
@@ -95,77 +166,77 @@
             }
 
             .news-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 60px 20px;
+                }
 
-    .news-section h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      position: relative;
-    }
+            .news-section h2 {
+                text-align: center;
+                font-size: 2.2rem;
+                margin-bottom: 40px;
+                position: relative;
+                }
 
-    .news-section h2::after {
-      content: '';
-      width: 60px;
-      height: 3px;
-      background-color: orange;
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+            .news-section h2::after {
+                content: '';
+                width: 60px;
+                height: 3px;
+                background-color: orange;
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                }
 
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
+            .news-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                }
 
-    .news-card {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-    }
+            .news-card {
+                background: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+                display: flex;
+                flex-direction: column;
+                }
 
-    .news-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+            .news-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
 
-    }
+            }
 
-    .news-card img1 {
-        width: 100%; /* Adjust width as needed */
-        height: 80%;
-    }
+            .news-card img1 {
+                width: 100%; /* Adjust width as needed */
+                height: 80%;
+            }
 
-    .news-content {
-      padding: 20px;
-      flex-grow: 1;
-    }
+            .news-content {
+                padding: 20px;
+                flex-grow: 1;
+            }
 
-    .news-content h3 {
-      font-size: 1.3rem;
-      color: orange;
-      margin-bottom: 10px;
-    }
+            .news-content h3 {
+            font-size: 1.3rem;
+            color: orange;
+            margin-bottom: 10px;
+            }
 
-    .news-content p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
+            .news-content p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            }
 
-    /* section play  */
-    .play {
-    width: 100%;
-    padding: 60px 20px;
-    background: #f513b5; /* light background for contrast */
+            /* section play  */
+            .play {
+            width: 100%;
+            padding: 60px 20px;
+            background: #f513b5; /* light background for contrast */
         }
 
         .container {
@@ -316,49 +387,78 @@
         .controls i:hover {
             background: lightgray;
         }
-    </style>
+
+         /* welcom from the index page */
+
+      .welcome {
+        background: linear-gradient(to right, #3a86ff, #8338ec, #ff006e);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        border-radius: 10px;
+        margin: 40px auto;
+        max-width: 1200px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .welcome-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .welcome h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    .welcome p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+    
+    .welcome-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 30px;
+        background-color: #ffbe0b;
+        color: #333;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .welcome-btn:hover {
+        background-color: #ff8c00;
+        transform: scale(1.05);
+
+    }
+  </style>
 </head>
-
 <body>
-    <section id="One">
-        <div class="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li> <!-- Updated admin to look like other navbar items -->
-                <li><a href="#">Events</a>
-                    <div class="sub-events">
-                        <ul>
-                            <li><a href="linkup.html">News</a></li>
-                            <li><a href="linkup.html">Events</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="about us.html">About us</a></li>
-                <li>
-                    <a href="#">Services</a>
-                    <div class="sub-menu-1">
-                        <ul>
-                            <li><a href="#">Computer repairs</a></li>
-                            <li><a href="#">Computer upgrade</a></li>
-                            <li><a href="#">Posters</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">What do we do</a></li>
-            </ul>
-        </div>
-    </section>
 
-    <section id="two">
-        <h2>game with us</h2>
-        <h2>Want a copmuter upgrade ?</h2>
-        <h2>Need you PC fixed ?</h2>
-        <h2>want a poster? talk to us</h2>
-    </section>
+  <section class="header">
+    <nav>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="linkup.html">news</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
 
-
-    <section class="welcome">
+   <section class="welcome">
         <div class="welcome-container">
-            <h1>Welcome to Gamers Lobby</h1>
+            <h1>Welcome to GamersLobby</h1>
             <p>
                 We are a community of gamers and tech enthusiasts dedicated to providing the best gaming experience. Whether you're looking for computer repairs, upgrades, or just want to connect with fellow gamers, you've come to the right place!
             </p>
@@ -372,7 +472,7 @@
     
 
     <section class="news-section">
-        <h2>You Want To Know</h2>
+        <h2>What do you want know</h2>
         <div class="news-grid">
             <!-- <div class="news-card">
                 <img src="image1_0 (1).jpg" alt="News 1">
@@ -385,7 +485,7 @@
             </div> -->
     
             <div class="news-card">
-                <img src="image0_0 (1).jpg" alt="News 2">
+                <img src="P/image0_0 (1).jpg" alt="News 2">
                 <div class="news-content">
                     <h3>Gamage Link up</h3>
                     <p>Combine education with gaming, and remember — you don’t have to play alone. Connect and team up with players in western cape through platforms like Steam, Epic Games, Xbox, and PlayStation.<br>
@@ -405,7 +505,7 @@
             </div> -->
     
             <div class="news-card">
-                <img src="tournment 1.jpg" alt="Our Events">
+                <img src="P/tournment 1.jpg" alt="Our Events">
                 <div class="news-content">
                     <h3>Our Events</h3>
                     <p>Our events will mostly take place in the city of George.<br>
@@ -416,7 +516,7 @@
     
             <!-- Fixed "DIY" news card -->
             <div class="news-card">
-                <img src="DIY.jpg" alt="DIY">
+                <img src="P/DIY.jpg" alt="DIY">
                 <div class="news-content">
                     <h3>DIY</h3>
                     <p>Did you know that you can fix your computer<br>
@@ -428,6 +528,8 @@
         </div>
     </section>
 
+   
+
 
     <!-- section for the DIY images -->
 
@@ -437,16 +539,16 @@
         <div class="wrapper">
             <div class="carousel">
                 <a href="DIY.html" target="_blank">
-                    <img src="playstation p.jpg" alt="PlayStation">
+                    <img src="P/playstation p.jpg" alt="PlayStation">
                 </a>
                 <a href="DIY.html" target="_blank">
-                    <img src="XBOX p.jpg" alt="Xbox">
+                    <img src="P/XBOX p.jpg" alt="Xbox">
                 </a>
                 <a href="DIY.html" target="_blank">
-                    <img src="steam.jpg" alt="Steam">
+                    <img src="P/steam.jpg" alt="Steam">
                 </a>
                 <a href="DIY.html" target="_blank">
-                    <img src="OIP (1).jpeg" alt="Other">
+                    <img src="P/OIP (1).jpeg" alt="Other">
                 </a>
             </div>
             <div class="controls">
@@ -465,24 +567,24 @@
         <div class="container">
             <div class="box">
                 <a href="linkup.html" target="_blank">
-                    <img src="fc 25.jpeg" alt="Game 1">
+                    <img src="P/fc 25.jpeg" alt="Game 1">
                 </a>
             </div>
             <div class="box">
                 <a href="linkup.html" target="_blank">
-                    <img src="street fighter.jpeg" alt="Game 2">
-                    <img src="naruto-shippuden-ultimate-ninja-storm-4.jpg" alt="game 2.2">
+                    <img src="P/street fighter.jpeg" alt="Game 2">
+                    <img src="P/naruto-shippuden-ultimate-ninja-storm-4.jpg" alt="game 2.2">
                 </a>
             </div>
             <div class="box">
-                <a href="linkup.html" target="_blank">
-                    <img src="apex.jpeg" alt="Game 3">
+                <a href="P/linkup.html" target="_blank">
+                    <img src="P/apex.jpeg" alt="Game 3">
                 </a>
             </div>
             <div class="box">
-                <a href="linkup.html" target="_blank">
-                    <img src="CODCOnsole).jpeg" alt="Game 4">
-                    <img src="call of duty mobile).jpeg" alt="Game 4.2">
+                <a href="p/linkup.html" target="_blank">
+                    <img src="P/CODCOnsole).jpeg" alt="Game 4">
+                    <img src="P/call of duty mobile).jpeg" alt="Game 4.2">
                 </a>
             </div>
         </div>
@@ -501,6 +603,10 @@
         </div>
       </section>
       
+      <!-- Add this to your HTML file
+      <div id="comments"></div>
+      <input id="commentInput" type="text" maxlength="200">
+      <button id="commentButton" onclick="addComment()">Add Comment</button> -->
 
      <!-- Footer -->
      <footer style="background-color: #000; color: white; padding: 40px 20px; text-align: center;">
@@ -515,8 +621,18 @@
       </footer>
     </section>
 
-    <script>
-          function postComment() {
+  <script>
+    const navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+
+       function postComment() {
         // Get the comment input value
         const commentInput = document.getElementById('commentInput').value;
 
@@ -555,7 +671,29 @@
 
             carousel.style.transform = `translateX(-${scrollAmount}px)`;
         }
-    </script>
-    
+
+        function addComment() {
+  const input = document.getElementById('commentInput');
+  const button = document.getElementById('commentButton');
+  const text = input.value.trim();
+  if (!text) return;
+  let comments = getComments();
+  if (comments.length >= MAX_COMMENTS) {
+    alert('Only 3 comments allowed at a time.');
+    return;
+  }
+  comments.push({ text, timestamp: Date.now() });
+  localStorage.setItem('comments', JSON.stringify(comments));
+  input.value = '';
+  renderComments();
+
+  // Disable button for 3 seconds
+  button.disabled = true;
+  setTimeout(() => {
+    button.disabled = false;
+  }, 3000);
+}
+  </script>
+
 </body>
 </html>
