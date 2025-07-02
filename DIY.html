@@ -325,6 +325,218 @@
     }
 
 
+    /* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styling */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Main section styling */
+section.recoil {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+/* Container styles */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Text content styles */
+.text-content {
+  flex: 1 1 45%;
+}
+.text-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+.text-content h2 {
+  font-size: 2em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+.text-content p {
+  margin-bottom: 15px;
+}
+.text-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+.text-content ul li {
+  margin-bottom: 8px;
+}
+
+/* Image content styles */
+.image-content {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image-content h2 {
+  margin-bottom: 15px;
+  font-size: 2em;
+  color: #2c3e50;
+}
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel img {
+  min-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  padding: 0 10px;
+  transform: translateY(-50%);
+}
+.controls button {
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+.controls button:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* PPSSPP section styles */
+.ppsspp-content {
+  background-color: #e8f0f2;
+  padding: 30px 20px;
+  border-radius: 10px;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.ppsspp-text {
+  flex: 1 1 60%;
+}
+.ppsspp-text h1 {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+.ppsspp-text p {
+  margin-bottom: 15px;
+}
+.get {
+  flex: 1 1 35%;
+}
+.get h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+.get h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #34495e;
+}
+.get ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+.get ul li {
+  margin-bottom: 10px;
+}
+.get a {
+  color: #2980b9;
+  text-decoration: none;
+}
+.get a:hover {
+  text-decoration: underline;
+}
+
+/* PC Gaming section styles */
+section.PC-Gaming {
+  padding: 40px 20px;
+  background-color: #fff;
+  margin-top: 50px;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+section.PC-Gaming h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+section.PC-Gaming h2 {
+  font-size: 1.8em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+section.PC-Gaming p {
+  margin-bottom: 15px;
+}
+h3 {
+  margin-top: 25px;
+  font-size: 1.6em;
+  color: #2c3e50;
+}
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Additional styling for responsiveness */
+@media(max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  .text-content, .image-content, .ppsspp-text, .get {
+    flex: 1 1 100%;
+  }
+  .carousel {
+    flex-direction: column;
+  }
+  .controls {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -372,10 +584,10 @@
         <h2>Cool Games Perks</h2>
         <div class="wrapper">
           <div class="carousel">
-            <img src="P/fc24.jpg" alt="FC24">
-            <img src="P/sifu.avif" alt="Sifu">
-            <img src="P/Tech and Gaming Retail Website in Dark Blue and Pink Simple Dark Style.png" alt="Promo">
-            <img src="P/storm 4.jpeg" alt="Storm 4">
+            <img src="fc24.jpg" alt="FC24">
+            <img src="sifu.avif" alt="Sifu">
+            <img src="Tech and Gaming Retail Website in Dark Blue and Pink Simple Dark Style.png" alt="Promo">
+            <img src="storm 4.jpeg" alt="Storm 4">
           </div>
           <div class="controls">
             <i class="prev" onclick="moveCarousel(-1)">&#10094;</i>
@@ -391,7 +603,7 @@
         <p>Did you know you can play PPSSPP games on your phone and also on your Laptop or PC?</p>
         <p>We know not everybody can afford a gaming PC or console.</p>
         <p>But do not let that stop you! You can still enjoy gaming on even low-end PCs like Celeron or i3—for free!</p>
-        <img src="P/ppsspp.png" alt="PPSSPP Emulator" style="max-width: 100%; border-radius: 10px; margin-top: 20px;">
+        <img src=ppsspp.png" alt="PPSSPP Emulator" style="max-width: 100%; border-radius: 10px; margin-top: 20px;">
       </div>
 
       <div class="get">
